@@ -1,0 +1,18 @@
+{
+  "name": "Injector",
+  "description": "Injects a script into a page",
+  "version": "1.0",
+  "manifest_version": 3,
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.youtube.com/*",
+        "https://*.google.com/*",
+        "https://*.microsoft.com/*"
+      ],
+      "js": [
+        "app.js"
+      ]
+    }
+  ],
+}
