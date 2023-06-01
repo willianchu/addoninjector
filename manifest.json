@@ -8,7 +8,8 @@
       "matches": [
         "https://*.youtube.com/*",
         "https://*.google.com/*",
-        "https://*.microsoft.com/*"
+        "https://*.microsoft.com/*",
+        "https://*.homedepot.ca/*",
       ],
       "js": [
         "app.js"
