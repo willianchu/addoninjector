@@ -164,6 +164,7 @@ if (site == "www.homedepot.ca") {
   document.tabs.onUpdated.addListener( function (tabId, changeInfo, tab) {
     if (changeInfo.status == 'complete' && tab.active) {
       console.log("Transforming SKU numbers into barcodes...");
+      Add_Javascript_Codebar_Generator();
       transformSKUsIntoBarcodes();
   
     }
