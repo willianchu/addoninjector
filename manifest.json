@@ -1,14 +1,11 @@
 {
-  "name": "Injector",
-  "version": "2.0",
+  "name": "Homedepot Barcode Generator",
+  "version": "3.0",
   "manifest_version": 3,
-  "description": "Injects a script into a page",
+  "description": "Creates a barcode for products from homedepot.ca",
   "content_scripts": [
     {
       "matches": [
-        "https://*.youtube.com/*",
-        "https://*.google.com/*",
-        "https://*.microsoft.com/*",
         "https://*.homedepot.ca/*"
       ],
       "js": [
