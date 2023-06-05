@@ -21,7 +21,8 @@ if ((site == "www.homedepot.ca") && isAllDigits) {
     
   .js-custom_element {
     font-family: 'Libre Barcode 39', cursive !important;
-    font-size: 200px;
+    line-height: 200%;
+    font-size: 100px;
     color: #000000 !important;
     background-color: #ffffff;
     position: fixed;
