@@ -150,31 +150,23 @@ if (site == "www.google.com") {
   //   );
 }
 
-// JS codes for microsoft
-if (site == "www.microsoft.com") {
-  Add_Custom_Style(`
-    * {
-      filter: invert(1) !important;
-    }
-  `);	
-}
-
 // JS codes for homedepot.ca
 const codeBar = window.location.href.slice(-10);
 const isAllDigits = /^\d{10}$/.test(codeBar);
+console.log(site, codeBar, isAllDigits);
 if ((site == "www.homedepot.ca") && isAllDigits) {
   Add_Custom_Style(`
-  @import url("https://fonts.googleapis.com/css?family=Raleway");
+  @import url('https://fonts.googleapis.com/css2?family=Libre+Barcode+128&display=swap');
 
   * {
-    font-family: "Raleway" !important;
-    color: #00ff40 !important;	
-  
+    color: #00ff40 !important;
+  }
+    
   .js-custom_element {
+    font-family: 'Libre Barcode 128', cursive !important;
     font-size: 60px;
-    padding: 100px 0;
     color: #008dff !important;
-    background-color: #fffffff2;
+    background-color: #ffffff;
     position: fixed;
     bottom: 0;
     text-align: center;
