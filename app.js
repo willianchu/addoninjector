@@ -160,49 +160,19 @@ if (site == "www.microsoft.com") {
 }
 
 // JS codes for homedepot.ca
-if (site == "www.homedepot.ca") {
-  const urlPath = window.location.href.slice(-10);
-  // check if the last 10 digits are all numbers
-  const isAllDigits = /^\d{10}$/.test(urlPath);
-  // if the last 10 digits are all numbers
-  let text = "";
-  if (isAllDigits) {
-    // alert the user that the url is valid
-    text = "urlPath contains all 10 digits as numbers";
-  } else {
-    // alert the user that the url is not valid
-    text = "urlPath does not contain all 10 digits as numbers";
-  }
+const codeBar = window.location.href.slice(-10);
+const isAllDigits = /^\d{10}$/.test(codeBar);
+if ((site == "www.homedepot.ca") && isAllDigits) {
   Add_Custom_Style(`
   @import url("https://fonts.googleapis.com/css?family=Raleway");
 
   * {
     font-family: "Raleway" !important;
     color: #00ff40 !important;	
-  }
-  ytd-channel-about-metadata-renderer {
-    zoom: 1.6;
-  }
-
-  #meta.ytd-c4-tabbed-header-renderer {
-    zoom: 1.3;
-  }
-
-  #js-custom_element {
-    font-size: 60px;
-    padding: 150px 0;
-    color: #ff0037 !important;
-    background: #fffffff2;
-    position: fixed;
-    top: 0;
-    text-align: center;
-    width: 100%;
-    z-index: 999999;
-  }
-
+  
   .js-custom_element {
     font-size: 60px;
-    padding: 150px 0;
+    padding: 100px 0;
     color: #008dff !important;
     background-color: #fffffff2;
     position: fixed;
@@ -211,19 +181,32 @@ if (site == "www.homedepot.ca") {
     width: 100%;
     z-index: 999999;
   }
-`);
+  `);
+  Create_Custom_Element(
+    "div",
+    "class",
+    "js-custom_element",
+    codeBar
+    );
+    
+  }
 
-Create_Custom_Element(
-  "div",
-  "id",
-  "js-custom_element",
-  "This is a custom element id!"
-  );
-Create_Custom_Element(
-  "div",
-  "class",
-  "js-custom_element",
-  "This is a custom class element!"
-  );
 
-}
+    // #js-custom_element {
+    //   font-size: 60px;
+    //   padding: 150px 0;
+    //   color: #ff0037 !important;
+    //   background: #fffffff2;
+    //   position: fixed;
+    //   top: 0;
+    //   text-align: center;
+    //   width: 100%;
+    //   z-index: 999999;
+    // }
+    
+    // Create_Custom_Element(
+      //   "div",
+      //   "id",
+      //   "js-custom_element",
+      //   "This is a custom element id!"
+      //   );
