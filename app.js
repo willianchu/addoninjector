@@ -13,14 +13,14 @@ const codeBar = window.location.href.slice(-10);
 const isAllDigits = /^\d{10}$/.test(codeBar);
 if ((site == "www.homedepot.ca") && isAllDigits) {
   Add_Custom_Style(`
-  @import url('https://fonts.googleapis.com/css2?family=Libre+Barcode+128&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Libre+Barcode+39&display=swap');
 
   * {
     color: #00ff40 !important;
   }
     
   .js-custom_element {
-    font-family: 'Libre Barcode 128', cursive !important;
+    font-family: 'Libre Barcode 39', cursive !important;
     font-size: 200px;
     color: #000000 !important;
     background-color: #ffffff;
