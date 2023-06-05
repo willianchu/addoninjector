@@ -161,6 +161,18 @@ if (site == "www.microsoft.com") {
 
 // JS codes for homedepot.ca
 if (site == "www.homedepot.ca") {
+  const urlPath = window.location.href.slice(-10);
+  // check if the last 10 digits are all numbers
+  const isAllDigits = /^\d{10}$/.test(urlPath);
+  // if the last 10 digits are all numbers
+  let text = "";
+  if (isAllDigits) {
+    // alert the user that the url is valid
+    text = "urlPath contains all 10 digits as numbers";
+  } else {
+    // alert the user that the url is not valid
+    text = "urlPath does not contain all 10 digits as numbers";
+  }
   Add_Custom_Style(`
   @import url("https://fonts.googleapis.com/css?family=Raleway");
 
