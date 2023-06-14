@@ -2,13 +2,6 @@ const site = window.location.hostname;
 
 const Add_Custom_Style = css => document.head.appendChild(document.createElement("style")).innerHTML = css;
 
-function Create_Custom_Element(tag, attr_tag, attr_name, value) {
-  const custom_element = document.createElement(tag);
-  custom_element.setAttribute(attr_tag, attr_name);
-  custom_element.innerHTML = value;
-  document.body.appendChild(custom_element);
-}
-
 const codeBar = window.location.href.slice(-10);
 const isAllDigits = /^\d{10}$/.test(codeBar);
 if ((site == "www.homedepot.ca") && isAllDigits) {
@@ -16,27 +9,46 @@ if ((site == "www.homedepot.ca") && isAllDigits) {
   @import url('https://fonts.googleapis.com/css2?family=Libre+Barcode+128&display=swap');
 
   * {
-    color: #00ff40 !important;
+    color: #Ff8c00 !important;
   }
     
-  .js-custom_element {
-    font-family: 'Libre Barcode 128', cursive !important;
-    line-height: 200%;
-    font-size: 100px;
-    color: #000000 !important;
-    background-color: #ffffff;
+  .BarCodeElement {
     position: fixed;
     bottom: 0;
+    left: 0;
+    right: 0;
     text-align: center;
-    width: 100%;
     z-index: 999999;
+    background-color: #ffffff;
+    font-family: 'Libre Barcode 128', cursive !important;
+    font-size: 6em;
+    color: #000000 !important;
+    margin-bottom: -.5em;
+    width: 100%;
+  }
+  .BCDescription {
+    position: fixed;
+    bottom: 0px;
+    left: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    z-index: 999999;
+    background-color: #ffffff;
+    font-family: 'Arial', cursive !important;
+    font-size: 1em;
+    color: #000000 !important;
   }
   `);
-  Create_Custom_Element(
-    "div",
-    "class",
-    "js-custom_element",
-    "*"+ codeBar +"*"
-    );
+  const BarCode = document.createElement("div");
+  BarCode.setAttribute("class", "BarCodeElement");
+  BarCode.innerHTML = "*" + codeBar + "*";
+  document.body.appendChild(BarCode);
+
+  const BarCodeDescription = document.createElement("div");
+  BarCodeDescription.setAttribute("class", "BCDescription");
+  BarCodeDescription.innerHTML = "SKU # " + codeBar;
+  document.body.appendChild(BarCodeDescription);
     
-  }
+}
