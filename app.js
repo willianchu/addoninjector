@@ -6,7 +6,7 @@ const codeBar = window.location.href.slice(-10);
 const isAllDigits = /^\d{10}$/.test(codeBar);
 if ((site == "www.homedepot.ca") && isAllDigits) {
   Add_Custom_Style(`
-  @import url('https://fonts.googleapis.com/css2?family=Libre+Barcode+128&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Libre+Barcode+39&display=swap');
 
   * {
     color: #Ff8c00 !important;
@@ -20,8 +20,8 @@ if ((site == "www.homedepot.ca") && isAllDigits) {
     text-align: center;
     z-index: 999999;
     background-color: #ffffff;
-    font-family: 'Libre Barcode 128', cursive !important;
-    font-size: 6em;
+    font-family: 'Libre Barcode 39', cursive !important;
+    font-size: 4em;
     color: #000000 !important;
     margin-bottom: -.5em;
     width: 100%;
